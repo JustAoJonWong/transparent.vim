@@ -69,84 +69,6 @@ function! MyTransparent()
 endfunction
 ```
 
-`vim-deus` configs:
-
-```vim
-set t_Co=256
-set termguicolors
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-" Add `let s:ds.none = ['NONE', 'NONE']` to deus.vim.
-let g:deus_sign_column = 'none'
-
-"set background=dark    " Setting dark mode
-colorscheme deus
-let g:deus_termcolors=256
-```
-
-Because of `let g:transparent_groups += ['NormalFloat', 'CocFloating']`, floating windows are transparent. So add borders for those transparent floating windows. Input `:CocConfig` to open the `coc-settings.json`, and add the blew:
-
-```json
-    // `:h coc-config-float`
-    "suggest.floatConfig": {
-        "border": true
-    },
-    "diagnostic.floatConfig": {
-        "border": true
-    },
-    "signature.floatConfig": {
-        "border": true
-    },
-    "hover.floatConfig": {
-        "border": true
-    },
-```
-
-Make lightline transparent:
-
-```vim
-autocmd VimEnter * call SetupLightlineColors()
-function SetupLightlineColors() abort
-  " transparent background in statusbar
-  let l:palette = lightline#palette()
-
-  " `let s:p.{mode}.{where} = [ [ {guifg}, {guibg}, {ctermfg}, {ctermbg} ], ... ]`
-  let l:palette.normal = {
-          \ 'left': [[ '#008080', 'NONE', 6, 'NONE' ]],
-          \ 'middle': [[ '#008080', 'NONE', 6, 'NONE' ]],
-          \ 'right': [[ '#008080', 'NONE', 6, 'NONE' ]],
-        \ }
-  let l:palette.inactive = l:palette.normal
-  let l:palette.visual = l:palette.normal
-  let l:palette.insert = l:palette.normal
-  let l:palette.replace = l:palette.normal
-  let l:palette.tabline = {
-          \ 'left': [[ '#0000ff', 'NONE', 12, 'NONE' ]],
-          \ 'tabsel': [[ '#008080', 'NONE', 6, 'NONE' ]],
-          \ 'middle': [[ 'NONE', 'NONE', 'NONE', 'NONE' ]],
-          \ 'right': [[ 'NONE', 'NONE', 'NONE', 'NONE' ]],
-        \ }
-
-  call lightline#colorscheme()
-endfunction
-
-" Comment out the `colorscheme`.
-let g:lightline = {
-      "\ 'colorscheme': 'deus',
-      \ }
-```
-
-Rnvimr:
-
-```vim
-" Rnvimr background
-":hi RnvimrNormal
-" show draw border
-let g:rnvimr_draw_border = 1
-```
-
 fzf.vim:
 
 ```vim
@@ -157,10 +79,6 @@ let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS .. ' --color=gutter:-1'
 
 #### Images
 
-lightline and vim-deus:
-
-![lightline-and-deus](https://github.com/tribela/vim-transparent/assets/5047683/dc49c12c-dce5-4f53-84bd-bf58ffdb0953)
-
 coc.nvim floating windows:
 
 ![coc-floating_windows](https://github.com/tribela/vim-transparent/assets/5047683/debb3c35-7b37-4fe5-a638-140081f1d245)
@@ -168,10 +86,6 @@ coc.nvim floating windows:
 coc.nvim CocList:
 
 ![coc-coclist](https://github.com/tribela/vim-transparent/assets/5047683/186e9b69-0caf-4390-b524-79ff82be7398)
-
-Rnvimr:
-
-![rnvimr](https://github.com/tribela/vim-transparent/assets/5047683/6bd67138-875c-4791-b8da-a3d0609e2ccc)
 
 Pmenu:
 
