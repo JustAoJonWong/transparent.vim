@@ -1,6 +1,6 @@
 " 新增：设置默认是否开启透明的变量，0为关闭，1为开启
 if !exists('g:transparent_default_enabled')
-  let g:transparent_default_enable = 0
+  let g:transparent_default_enabled = 0
 endif
 
 augroup transparent

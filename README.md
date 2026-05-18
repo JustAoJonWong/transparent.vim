@@ -39,7 +39,8 @@ For example, I use these plugins, [coc.nvim](https://github.com/neoclide/coc.nvi
 :bulb: You can also use `let g:transparent_groups_add` if you just want to add some groups, without overriding the defaults.
 
 ```vim
-Plug 'tribela/vim-transparent'
+" Plug 'tribela/vim-transparent'  " the raw project
+Plug 'JustAoJonWong/transparent.vim'
 
 " default
 let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
